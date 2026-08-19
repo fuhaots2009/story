@@ -7495,22 +7495,12 @@ const PLACES = [
           window.clearTimeout(timer);
           completeOne();
         }
-        if (window.fetch) {
-          fetch(src, { cache: "force-cache" })
-            .then(function (res) {
-              if (!res.ok) throw new Error("asset " + res.status);
-              return res.blob();
-            })
-            .then(finish)
-            .catch(finish);
-        } else {
-          var im = new Image();
-          im.decoding = "async";
-          im.onload = finish;
-          im.onerror = finish;
-          im.src = src;
-          if (im.complete && im.naturalWidth) finish();
-        }
+        var im = new Image();
+        im.decoding = "async";
+        im.onload = finish;
+        im.onerror = finish;
+        im.src = src;
+        if (im.complete && im.naturalWidth) finish();
       }
       if (!queue.length && active === 0) {
         finished = true;
@@ -7546,7 +7536,7 @@ const PLACES = [
     img.src = opt.src;
     img.alt = "";
     img.decoding = "async";
-    img.loading = isHero ? "eager" : "lazy";
+    img.loading = "lazy";
     if (isHero) {
       img.setAttribute("fetchpriority", "low");
       if (img.complete) img.classList.add("is-loaded");
@@ -8156,7 +8146,12 @@ const PLACES = [
     scenes.forEach(function (s) { addPage(s.el); });
 
     (function startIntroAssetGate() {
-      var sources = [
+      var selectedStatSources = collectSelectedStatArtSources();
+      var commonSources = [
+        "assets/img/qixi-bridge-wide.webp?v=20260819b",
+        "assets/img/vintage-envelope-surface.webp?v=20260819b",
+        "assets/img/vintage-letter-paper.webp?v=20260819e",
+        "assets/img/bg.jpg",
         "assets/img/qixi-round-moon.svg",
         "assets/img/chat-cartoon-bg.webp?v=20260819a",
         "assets/img/love-tree-fireworks.webp",
@@ -8166,14 +8161,26 @@ const PLACES = [
         "assets/scene-art/premium/timeline-summary-bg.webp?v=20260819b",
         "assets/scene-art/premium/ending-story-continues.webp?v=20260819b"
       ];
-      sources = sources.concat(collectSelectedStatArtSources(), STAGE_BACKGROUNDS || []);
+      var allSources = commonSources.concat(selectedStatSources, STAGE_BACKGROUNDS || []);
       var gateDone = false;
-      function isGateExcluded(src) {
-        return /assets\/img\/(qixi-bridge-wide|vintage-envelope-surface|vintage-letter-paper|bg)\./.test(src || "");
-      }
       container.querySelectorAll("img").forEach(function (img) {
         var src = img.currentSrc || img.src;
-        if (src && !isGateExcluded(src)) sources.push(src);
+        if (src) allSources.push(src);
+      });
+      allSources = uniqueAssetSources(allSources);
+      var criticalSources = uniqueAssetSources([
+        "assets/img/qixi-round-moon.svg"
+      ].concat(selectedStatSources.slice(0, 5)));
+      var criticalKeys = {};
+      criticalSources.forEach(function (src) {
+        try { criticalKeys[new URL(src, location.href).href] = true; }
+        catch (e) { criticalKeys[src] = true; }
+      });
+      var remainingSources = allSources.filter(function (src) {
+        var key;
+        try { key = new URL(src, location.href).href; }
+        catch (e) { key = src; }
+        return !criticalKeys[key];
       });
       function updateIntroProgress(done, total) {
         if (gateDone) return;
@@ -8193,9 +8200,12 @@ const PLACES = [
         introScene.assetsReady = true;
         openBtn.disabled = false;
         intro.classList.add("assets-ready");
+        window.setTimeout(function () {
+          preloadImageAssets(remainingSources, null, null);
+        }, 450);
       }
-      preloadImageAssets(sources, updateIntroProgress, finishIntroGate);
-      window.setTimeout(finishIntroGate, 22000);
+      preloadImageAssets(criticalSources, updateIntroProgress, finishIntroGate);
+      window.setTimeout(function () { finishIntroGate(85); }, 2500);
     })();
 
     // 流程期间锁定：页脚不显示，走完全部场景才解锁
