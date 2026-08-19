@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="一共发过 185,647 条 - 很多气泡像星星一样连成星座">
+  <defs>
+    <radialGradient id="halo-stat-total-msgs-b" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffe1a8" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f49aa1" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#88d8d0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-total-msgs-b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe1a8"/>
+      <stop offset=".58" stop-color="#f49aa1"/>
+      <stop offset="1" stop-color="#88d8d0"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-total-msgs-b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-total-msgs-b" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffe1a8" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-total-msgs-b" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-total-msgs-b" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-total-msgs-b)"/>
+  <g filter="url(#soft-stat-total-msgs-b)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffe1a8" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#88d8d0" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f49aa1" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffe1a8" opacity="0.55"/><path d="M120 130L230 96L332 166L458 128L538 214L432 318L278 270L154 350" fill="none" stroke="#ffe1a8" stroke-width="2" opacity=".48"/><path d="M104 106H136Q154 106 154 124V136Q154 154 136 154H104Q86 154 86 136V124Q86 106 104 106Z M102.32 154 l-24 28 l44-20" fill="rgba(220,246,245,.82)" stroke="#88d8d0" stroke-width="2"/><path d="M214 72H246Q264 72 264 90V102Q264 120 246 120H214Q196 120 196 102V90Q196 72 214 72Z M247.68 120 l24 28 l-44-20" fill="rgba(255,235,218,.86)" stroke="#f49aa1" stroke-width="2"/><path d="M316 142H348Q366 142 366 160V172Q366 190 348 190H316Q298 190 298 172V160Q298 142 316 142Z M314.32 190 l-24 28 l44-20" fill="rgba(220,246,245,.82)" stroke="#88d8d0" stroke-width="2"/><path d="M442 104H474Q492 104 492 122V134Q492 152 474 152H442Q424 152 424 134V122Q424 104 442 104Z M475.68 152 l24 28 l-44-20" fill="rgba(255,235,218,.86)" stroke="#f49aa1" stroke-width="2"/><path d="M522 190H554Q572 190 572 208V220Q572 238 554 238H522Q504 238 504 220V208Q504 190 522 190Z M520.32 238 l-24 28 l44-20" fill="rgba(220,246,245,.82)" stroke="#88d8d0" stroke-width="2"/><path d="M416 294H448Q466 294 466 312V324Q466 342 448 342H416Q398 342 398 324V312Q398 294 416 294Z M449.68 342 l24 28 l-44-20" fill="rgba(255,235,218,.86)" stroke="#f49aa1" stroke-width="2"/><path d="M262 246H294Q312 246 312 264V276Q312 294 294 294H262Q244 294 244 276V264Q244 246 262 246Z M260.32 294 l-24 28 l44-20" fill="rgba(220,246,245,.82)" stroke="#88d8d0" stroke-width="2"/><path d="M138 326H170Q188 326 188 344V356Q188 374 170 374H138Q120 374 120 356V344Q120 326 138 326Z M171.68 374 l24 28 l-44-20" fill="rgba(255,235,218,.86)" stroke="#f49aa1" stroke-width="2"/></g>
+</svg>

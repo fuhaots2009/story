@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="发过的表情包贴纸 16,031 个 - 笑脸气球飘成小队伍">
+  <defs>
+    <radialGradient id="halo-stat-stickers-c" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#fff08c" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f49aa1" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#88d8d0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-stickers-c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff08c"/>
+      <stop offset=".58" stop-color="#f49aa1"/>
+      <stop offset="1" stop-color="#88d8d0"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-stickers-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-stickers-c" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#fff08c" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-stickers-c" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-stickers-c" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-stickers-c)"/>
+  <g filter="url(#soft-stat-stickers-c)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#fff08c" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#88d8d0" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f49aa1" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#fff08c" opacity="0.55"/><path d="M184 392C230 328 280 328 320 392C356 322 432 310 480 384" fill="none" stroke="#fff08c" stroke-width="4" opacity=".45"/><g transform="translate(182 178)">
+    <circle r="44" fill="#fff08c" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-14.08" cy="-7.04" r="3.96" fill="#7a4a42"/>
+    <circle cx="14.08" cy="-7.04" r="3.96" fill="#7a4a42"/>
+    <path d="M-16.72 9.68Q0 22 16.72 9.68" fill="none" stroke="#7a4a42" stroke-width="3.52" stroke-linecap="round"/>
+  </g><g transform="translate(304 122)">
+    <circle r="52" fill="#f49aa1" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-16.64" cy="-8.32" r="4.68" fill="#7a4a42"/>
+    <circle cx="16.64" cy="-8.32" r="4.68" fill="#7a4a42"/>
+    <path d="M-19.76 11.44Q0 26 19.76 11.44" fill="none" stroke="#7a4a42" stroke-width="4.16" stroke-linecap="round"/>
+  </g><g transform="translate(440 190)">
+    <circle r="45" fill="#88d8d0" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-14.4" cy="-7.2" r="4.05" fill="#7a4a42"/>
+    <circle cx="14.4" cy="-7.2" r="4.05" fill="#7a4a42"/>
+    <path d="M-17.1 9.9Q0 22.5 17.1 9.9" fill="none" stroke="#7a4a42" stroke-width="3.6" stroke-linecap="round"/>
+  </g><path d="M182 222v134M304 174v170M440 235v128" stroke="rgba(255,255,255,.45)" stroke-width="2"/></g>
+</svg>

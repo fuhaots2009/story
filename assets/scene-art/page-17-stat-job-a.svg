@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="陪我找工作 - 一封写着好消息的 offer 信封">
+  <defs>
+    <radialGradient id="halo-stat-job-a" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#f6c184" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#9fd3ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#f0a4b6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-job-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6c184"/>
+      <stop offset=".58" stop-color="#9fd3ff"/>
+      <stop offset="1" stop-color="#f0a4b6"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-job-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-job-a" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f6c184" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-job-a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-job-a" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-job-a)"/>
+  <g filter="url(#soft-stat-job-a)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#f6c184" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#f0a4b6" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#9fd3ff" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#f6c184" opacity="0.55"/><rect x="158" y="160" width="324" height="210" rx="22" fill="#f6c184" opacity=".82" stroke="#9fd3ff" stroke-width="5"/><path d="M158 160l162 126l162-126M158 370l126-114M482 370L356 256" fill="none" stroke="rgba(255,255,255,.42)" stroke-width="5"/><path d="M268 118h104l38 42H230z" fill="rgba(255,248,226,.88)" stroke="#f0a4b6" stroke-width="4"/><path d="M282 140h78" stroke="#9fd3ff" stroke-width="7" stroke-linecap="round" opacity=".35"/><path d="M468 100L472.68 113.32L486 118L472.68 122.68L468 136L463.32 122.68L450 118L463.32 113.32Z" fill="#f0a4b6" opacity="0.8"/></g>
+</svg>

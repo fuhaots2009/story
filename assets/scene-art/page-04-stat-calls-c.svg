@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="打过的语音通话 916 通 - 声音像一座小桥连到远处">
+  <defs>
+    <radialGradient id="halo-stat-calls-c" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#9ed8ff" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f6c184" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#c7a9ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-calls-c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9ed8ff"/>
+      <stop offset=".58" stop-color="#f6c184"/>
+      <stop offset="1" stop-color="#c7a9ff"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-calls-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-calls-c" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#9ed8ff" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-calls-c" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-calls-c" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-calls-c)"/>
+  <g filter="url(#soft-stat-calls-c)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#9ed8ff" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#c7a9ff" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f6c184" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#9ed8ff" opacity="0.55"/><path d="M90 330C208 156 434 156 552 330" fill="none" stroke="#9ed8ff" stroke-width="9" stroke-linecap="round" opacity=".45"/><path d="M116 326C226 216 414 216 524 326" fill="none" stroke="#c7a9ff" stroke-width="5" stroke-linecap="round" opacity=".55"/><circle cx="112" cy="330" r="34" fill="#f6c184"/><circle cx="528" cy="330" r="34" fill="#c7a9ff"/><path d="M106 318c22 4 38 18 44 38M490 356c6-24 22-38 44-38" fill="none" stroke="#fff7df" stroke-width="5" stroke-linecap="round"/></g>
+</svg>

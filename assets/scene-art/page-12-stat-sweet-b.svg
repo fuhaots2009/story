@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="说过的甜话 - 糖纸和爱心散在一起">
+  <defs>
+    <radialGradient id="halo-stat-sweet-b" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffb1bc" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f7d794" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#c9a8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-sweet-b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb1bc"/>
+      <stop offset=".58" stop-color="#f7d794"/>
+      <stop offset="1" stop-color="#c9a8ff"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-sweet-b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-sweet-b" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffb1bc" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-sweet-b" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-sweet-b" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-sweet-b)"/>
+  <g filter="url(#soft-stat-sweet-b)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffb1bc" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#c9a8ff" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f7d794" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffb1bc" opacity="0.55"/><g><path d="M112 236l-34-18v76l34-18h76l34 18v-76l-34 18z" fill="#c9a8ff" opacity=".82" stroke="rgba(255,255,255,.45)" stroke-width="2"/><path d="M150 251.25C138 240.75 128.25 254.25 150 269.25C171.75 254.25 162 240.75 150 251.25Z" fill="#f7d794"/><path d="M214 276l-34-18v76l34-18h76l34 18v-76l-34 18z" fill="#ffb1bc" opacity=".82" stroke="rgba(255,255,255,.45)" stroke-width="2"/><path d="M252 291.25C240 280.75 230.25 294.25 252 309.25C273.75 294.25 264 280.75 252 291.25Z" fill="#f7d794"/><path d="M324 236l-34-18v76l34-18h76l34 18v-76l-34 18z" fill="#c9a8ff" opacity=".82" stroke="rgba(255,255,255,.45)" stroke-width="2"/><path d="M362 251.25C350 240.75 340.25 254.25 362 269.25C383.75 254.25 374 240.75 362 251.25Z" fill="#f7d794"/><path d="M440 276l-34-18v76l34-18h76l34 18v-76l-34 18z" fill="#ffb1bc" opacity=".82" stroke="rgba(255,255,255,.45)" stroke-width="2"/><path d="M478 291.25C466 280.75 456.25 294.25 478 309.25C499.75 294.25 490 280.75 478 291.25Z" fill="#f7d794"/></g><path d="M320 148.8C281.6 115.2 250.4 158.4 320 206.4C389.6 158.4 358.4 115.2 320 148.8Z" fill="#ffb1bc"/><path d="M396 375.8C373.6 356.2 355.4 381.4 396 409.4C436.6 381.4 418.4 356.2 396 375.8Z" fill="#c9a8ff"/></g>
+</svg>

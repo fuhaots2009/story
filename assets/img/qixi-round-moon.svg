@@ -1,0 +1,31 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="moon" cx="40%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#fff9d6"/>
+      <stop offset=".42" stop-color="#ffeeb0"/>
+      <stop offset=".74" stop-color="#f7d48d"/>
+      <stop offset="1" stop-color="#eab96d"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset=".34" stop-color="#fff1b6" stop-opacity=".95"/>
+      <stop offset=".68" stop-color="#f7d794" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#f7d794" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="phase">
+      <rect width="180" height="180" fill="black"/>
+      <circle cx="86" cy="90" r="58" fill="white"/>
+      <circle cx="116" cy="86" r="59" fill="black"/>
+    </mask>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+  <circle cx="86" cy="90" r="76" fill="url(#glow)" filter="url(#soft)" opacity=".82" mask="url(#phase)"/>
+  <g mask="url(#phase)">
+    <circle cx="86" cy="90" r="58" fill="url(#moon)"/>
+    <path d="M54 60c13-20 36-29 60-23 16 4 28 14 35 29-12-11-28-17-46-16-21 1-38 9-49 10Z" fill="#fffbe8" opacity=".36"/>
+    <circle cx="70" cy="74" r="7" fill="#e3b56e" opacity=".18"/>
+    <circle cx="88" cy="112" r="6" fill="#fdf0ba" opacity=".28"/>
+    <path d="M48 109c15 20 39 31 64 25 13-3 24-10 32-20-9 19-27 31-49 32-25 1-45-14-47-37Z" fill="#d69456" opacity=".1"/>
+  </g>
+</svg>

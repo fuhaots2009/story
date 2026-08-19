@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="我们叫过「嘟嘟」 - 两颗大星护着一颗小星">
+  <defs>
+    <radialGradient id="halo-stat-dudu-c" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffe5a8" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#bfe7d6" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#f8b9c6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-dudu-c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe5a8"/>
+      <stop offset=".58" stop-color="#bfe7d6"/>
+      <stop offset="1" stop-color="#f8b9c6"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-dudu-c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-dudu-c" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffe5a8" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-dudu-c" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-dudu-c" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-dudu-c)"/>
+  <g filter="url(#soft-stat-dudu-c)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffe5a8" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#f8b9c6" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#bfe7d6" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffe5a8" opacity="0.55"/><ellipse cx="320" cy="246" rx="206" ry="118" fill="none" stroke="#ffe5a8" stroke-width="5" opacity=".42"/><ellipse cx="320" cy="246" rx="148" ry="176" fill="none" stroke="#f8b9c6" stroke-width="4" opacity=".34" transform="rotate(22 320 246)"/><path d="M202 208L210.32 231.68L234 240L210.32 248.32L202 272L193.68 248.32L170 240L193.68 231.68Z" fill="#ffe5a8" opacity="0.9"/><path d="M438 208L446.32 231.68L470 240L446.32 248.32L438 272L429.68 248.32L406 240L429.68 231.68Z" fill="#bfe7d6" opacity="0.9"/><path d="M320 224L325.72 240.28L342 246L325.72 251.72L320 268L314.28 251.72L298 246L314.28 240.28Z" fill="#f8b9c6" opacity="0.95"/></g>
+</svg>

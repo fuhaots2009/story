@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="问你吃饭了没 - 一碗冒热气的饭和两双筷子">
+  <defs>
+    <radialGradient id="halo-stat-eat-a" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffd08a" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f2a76e" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#8fd9c2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-eat-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd08a"/>
+      <stop offset=".58" stop-color="#f2a76e"/>
+      <stop offset="1" stop-color="#8fd9c2"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-eat-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-eat-a" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffd08a" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-eat-a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-eat-a" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-eat-a)"/>
+  <g filter="url(#soft-stat-eat-a)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffd08a" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#8fd9c2" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f2a76e" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffd08a" opacity="0.55"/><path d="M178 276h284Q450 396 320 396Q190 396 178 276Z" fill="#ffd08a" opacity=".90" stroke="#f2a76e" stroke-width="5"/><ellipse cx="320" cy="276" rx="150" ry="46" fill="rgba(255,246,221,.92)" stroke="#ffd08a" stroke-width="5"/><path d="M250 132C212 170 292 196 250 236M322 116C282 166 376 194 322 244M394 134C358 174 432 202 394 238" fill="none" stroke="#8fd9c2" stroke-width="8" stroke-linecap="round" opacity=".52"/><path d="M444 146L542 80M468 174L574 124" stroke="#d9b06f" stroke-width="8" stroke-linecap="round"/></g>
+</svg>

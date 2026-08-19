@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="你最常说的三个词 - 三颗笑意小星球围着月亮转">
+  <defs>
+    <radialGradient id="halo-stat-top3-you-a" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#f8b7c2" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#b7e1ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#f7d794" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-top3-you-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8b7c2"/>
+      <stop offset=".58" stop-color="#b7e1ff"/>
+      <stop offset="1" stop-color="#f7d794"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-top3-you-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-top3-you-a" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f8b7c2" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-top3-you-a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-top3-you-a" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-top3-you-a)"/>
+  <g filter="url(#soft-stat-top3-you-a)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#f8b7c2" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#f7d794" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#b7e1ff" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#f8b7c2" opacity="0.55"/><circle cx="320" cy="242" r="80" fill="#f8b7c2" opacity=".24"/><ellipse cx="320" cy="242" rx="210" ry="92" fill="none" stroke="#b7e1ff" stroke-width="4" opacity=".45"/><ellipse cx="320" cy="242" rx="172" ry="138" fill="none" stroke="#f7d794" stroke-width="3" opacity=".38" transform="rotate(-18 320 242)"/><g transform="translate(174 220)">
+    <circle r="34" fill="#b7e1ff" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-10.88" cy="-5.44" r="3.06" fill="#7a4a42"/>
+    <circle cx="10.88" cy="-5.44" r="3.06" fill="#7a4a42"/>
+    <path d="M-12.92 7.48Q0 17 12.92 7.48" fill="none" stroke="#7a4a42" stroke-width="2.72" stroke-linecap="round"/>
+  </g><g transform="translate(370 134)">
+    <circle r="30" fill="#f7d794" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-9.6" cy="-4.8" r="2.6999999999999997" fill="#7a4a42"/>
+    <circle cx="9.6" cy="-4.8" r="2.6999999999999997" fill="#7a4a42"/>
+    <path d="M-11.4 6.6Q0 15 11.4 6.6" fill="none" stroke="#7a4a42" stroke-width="2.4" stroke-linecap="round"/>
+  </g><g transform="translate(468 306)">
+    <circle r="36" fill="#f8b7c2" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+    <circle cx="-11.52" cy="-5.76" r="3.2399999999999998" fill="#7a4a42"/>
+    <circle cx="11.52" cy="-5.76" r="3.2399999999999998" fill="#7a4a42"/>
+    <path d="M-13.68 7.92Q0 18 13.68 7.92" fill="none" stroke="#7a4a42" stroke-width="2.88" stroke-linecap="round"/>
+  </g></g>
+</svg>

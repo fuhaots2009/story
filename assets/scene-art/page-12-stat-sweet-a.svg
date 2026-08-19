@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="说过的甜话 - 一只装满甜话的小玻璃罐">
+  <defs>
+    <radialGradient id="halo-stat-sweet-a" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffb1bc" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#f7d794" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#c9a8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-sweet-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb1bc"/>
+      <stop offset=".58" stop-color="#f7d794"/>
+      <stop offset="1" stop-color="#c9a8ff"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-sweet-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-sweet-a" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffb1bc" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-sweet-a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-sweet-a" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-sweet-a)"/>
+  <g filter="url(#soft-stat-sweet-a)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffb1bc" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#c9a8ff" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#f7d794" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffb1bc" opacity="0.55"/><path d="M228 128h184l-22 60v202q0 36-36 36h-68q-36 0-36-36V188z" fill="rgba(255,245,232,.32)" stroke="#ffb1bc" stroke-width="4"/><rect x="246" y="96" width="148" height="46" rx="14" fill="#c9a8ff" opacity=".88"/><path d="M260 215.6C247.2 204.4 236.8 218.8 260 234.8C283.2 218.8 272.8 204.4 260 215.6Z" fill="#ffb1bc"/><path d="M320 217C304 203 291 221 320 241C349 221 336 203 320 217Z" fill="#f7d794"/><path d="M382 273.6C369.2 262.4 358.8 276.8 382 292.8C405.2 276.8 394.8 262.4 382 273.6Z" fill="#c9a8ff"/><path d="M294 275C278 261 265 279 294 299C323 279 310 261 294 275Z" fill="#ffb1bc"/><path d="M352 331.6C339.2 320.4 328.8 334.8 352 350.8C375.2 334.8 364.8 320.4 352 331.6Z" fill="#f7d794"/><path d="M310 333C294 319 281 337 310 357C339 337 326 319 310 333Z" fill="#c9a8ff"/></g>
+</svg>

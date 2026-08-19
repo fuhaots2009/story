@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-label="我们写过的字 1,347,076 字 - 一只手托着几本厚厚的书">
+  <defs>
+    <radialGradient id="halo-stat-chars-a" cx="50%" cy="50%" r="64%">
+      <stop offset="0" stop-color="#ffd18f" stop-opacity=".28"/>
+      <stop offset=".58" stop-color="#e88f76" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#f4e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="warm-stat-chars-a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd18f"/>
+      <stop offset=".58" stop-color="#e88f76"/>
+      <stop offset="1" stop-color="#f4e6bf"/>
+    </linearGradient>
+    <linearGradient id="paper-stat-chars-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8df"/>
+      <stop offset="1" stop-color="#e9c895"/>
+    </linearGradient>
+    <filter id="soft-stat-chars-a" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0d0921" flood-opacity=".34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffd18f" flood-opacity=".18"/>
+    </filter>
+    <filter id="glow-stat-chars-a" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grain-stat-chars-a" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M3 7h1M12 14h1M22 5h1M19 23h1M8 25h1" stroke="#8a6046" stroke-opacity=".18" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="500" fill="url(#halo-stat-chars-a)"/>
+  <g filter="url(#soft-stat-chars-a)"><path d="M92 73L94.86 81.14L103 84L94.86 86.86L92 95L89.14 86.86L81 84L89.14 81.14Z" fill="#ffd18f" opacity="0.75"/><path d="M540 89L542.34 95.66L549 98L542.34 100.34L540 107L537.66 100.34L531 98L537.66 95.66Z" fill="#f4e6bf" opacity="0.65"/><path d="M560 369L563.38 378.62L573 382L563.38 385.38L560 395L556.62 385.38L547 382L556.62 378.62Z" fill="#e88f76" opacity="0.55"/><path d="M120 390L122.08 395.92L128 398L122.08 400.08L120 406L117.92 400.08L112 398L117.92 395.92Z" fill="#ffd18f" opacity="0.55"/><path d="M134 372C206 350 288 352 390 374C422 382 454 380 492 360C514 350 538 360 524 380C492 426 412 438 316 420L176 394C130 386 110 378 134 372Z" fill="#f3c39b" stroke="rgba(118,74,56,.28)" stroke-width="3"/><g transform="translate(214 232) rotate(-5)">
+    <rect width="250" height="48" rx="8" fill="#e88f76" stroke="rgba(255,248,222,.62)" stroke-width="2"/>
+    <path d="M18 8v32" stroke="rgba(117,65,44,.25)" stroke-width="4"/>
+    <path d="M226 14h14M226 28h14" stroke="rgba(255,255,255,.50)" stroke-width="3" stroke-linecap="round"/>
+  </g><g transform="translate(182 282) rotate(3)">
+    <rect width="292" height="52" rx="8" fill="#ffd18f" stroke="rgba(255,248,222,.62)" stroke-width="2"/>
+    <path d="M18 8v36" stroke="rgba(117,65,44,.25)" stroke-width="4"/>
+    <path d="M268 14h14M268 28h14" stroke="rgba(255,255,255,.50)" stroke-width="3" stroke-linecap="round"/>
+  </g><g transform="translate(226 330) rotate(-2)">
+    <rect width="238" height="54" rx="8" fill="#f4e6bf" stroke="rgba(255,248,222,.62)" stroke-width="2"/>
+    <path d="M18 8v38" stroke="rgba(117,65,44,.25)" stroke-width="4"/>
+    <path d="M214 14h14M214 28h14" stroke="rgba(255,255,255,.50)" stroke-width="3" stroke-linecap="round"/>
+  </g><path d="M182 378C248 394 372 418 452 390" fill="none" stroke="rgba(120,72,48,.25)" stroke-width="4" stroke-linecap="round"/></g>
+</svg>
