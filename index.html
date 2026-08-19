@@ -8012,10 +8012,10 @@ const PLACES = [
       copy.appendChild(t2);
       copy.appendChild(d2);
       sec.appendChild(copy);
-      var hint2 = makeHint("左右滑动，继续");
+      var hint2 = makeHint("向右滑动，回看");
       sec.appendChild(hint2);
       container.appendChild(sec);
-      scenes.push({ el: sec, hint: hint2 });
+      scenes.push({ el: sec, hint: hint2, noTap: true, terminal: true });
     })();
 
 
@@ -8080,6 +8080,7 @@ const PLACES = [
     function advance() {
       if (!container.classList.contains("flow-mode")) return;
       var sc = scenes[current];
+      if (sc.terminal) return;
       if (sc.intro) {
         if (sc.opening) return;
         if (!sc.opened) {
