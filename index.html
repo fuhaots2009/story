@@ -8167,6 +8167,7 @@ const PLACES = [
         "assets/scene-art/premium/ending-story-continues.png?v=20260819b"
       ];
       sources = sources.concat(collectSelectedStatArtSources(), STAGE_BACKGROUNDS || []);
+      var gateDone = false;
       function isGateExcluded(src) {
         return /assets\/img\/(qixi-bridge-wide|vintage-envelope-surface|vintage-letter-paper|bg)\./.test(src || "");
       }
@@ -8175,16 +8176,20 @@ const PLACES = [
         if (src && !isGateExcluded(src)) sources.push(src);
       });
       function updateIntroProgress(done, total) {
+        if (gateDone) return;
         var pct = total ? Math.round(done / total * 100) : 100;
         intro.style.setProperty("--intro-load", String(Math.min(1, pct / 100)));
-        loaderText.textContent = pct >= 100 ? "加载完成 100%" : "正在加载 " + pct + "%";
+        loaderText.textContent = pct >= 85 ? "加载完成 " + pct + "%" : "正在加载 " + pct + "%";
         introLoader.setAttribute("aria-label", loaderText.textContent);
+        if (pct >= 85) finishIntroGate(pct);
       }
-      var gateDone = false;
-      function finishIntroGate() {
+      function finishIntroGate(pct) {
         if (gateDone) return;
         gateDone = true;
-        updateIntroProgress(1, 1);
+        var finalPct = pct || 100;
+        intro.style.setProperty("--intro-load", String(Math.min(1, finalPct / 100)));
+        loaderText.textContent = "加载完成 " + finalPct + "%";
+        introLoader.setAttribute("aria-label", loaderText.textContent);
         introScene.assetsReady = true;
         openBtn.disabled = false;
         intro.classList.add("assets-ready");
