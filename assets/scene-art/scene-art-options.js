@@ -18,7 +18,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "message-river",
         "description": "精修：消息车载着满满聊天气泡穿过山谷",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-02-stat-total-msgs-a.png"
+        "src": "assets/scene-art/premium/page-02-stat-total-msgs-a.webp"
       },
       {
         "key": "b",
@@ -55,7 +55,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "hand-books",
         "description": "精修：一只手托着 13 本厚厚的书",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-03-stat-chars-a.png"
+        "src": "assets/scene-art/premium/page-03-stat-chars-a.webp"
       },
       {
         "key": "b",
@@ -92,7 +92,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "moon-phone",
         "description": "精修：山谷里两端相连的发光语音线",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-04-stat-calls-a.png"
+        "src": "assets/scene-art/premium/page-04-stat-calls-a.webp"
       },
       {
         "key": "b",
@@ -129,7 +129,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "polaroids",
         "description": "精修：相册和拍立得记录彼此发过的照片",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-05-stat-photos-msg-a.png"
+        "src": "assets/scene-art/premium/page-05-stat-photos-msg-a.webp"
       },
       {
         "key": "b",
@@ -166,7 +166,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "sticker-burst",
         "description": "精修：笑脸贴纸从信封里蹦出来",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-06-stat-stickers-a.png"
+        "src": "assets/scene-art/premium/page-06-stat-stickers-a.webp"
       },
       {
         "key": "b",
@@ -203,7 +203,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "laugh-orbits",
         "description": "精修：三颗笑意气泡星球和小花园",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-07-stat-top3-you-a.png"
+        "src": "assets/scene-art/premium/page-07-stat-top3-you-a.webp"
       },
       {
         "key": "b",
@@ -240,7 +240,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "return-comet",
         "description": "精修：消息彗星绕回信箱和气泡",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-08-stat-top3-me-a.png"
+        "src": "assets/scene-art/premium/page-08-stat-top3-me-a.webp"
       },
       {
         "key": "b",
@@ -277,7 +277,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "name-tags",
         "description": "精修：昵称礼盒和小小依偎人偶",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-09-stat-nickname-you-a.png?v=20260819g"
+        "src": "assets/scene-art/premium/page-09-stat-nickname-you-a.webp?v=20260819g"
       },
       {
         "key": "b",
@@ -314,7 +314,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "nested-hearts",
         "description": "精修：礼盒里一层层套娃爱心",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-10-stat-nickname-me-a.png"
+        "src": "assets/scene-art/premium/page-10-stat-nickname-me-a.webp"
       },
       {
         "key": "b",
@@ -351,7 +351,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "tiny-cradle",
         "description": "精修：小摇篮里亮着一颗星",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-11-stat-dudu-a.png"
+        "src": "assets/scene-art/premium/page-11-stat-dudu-a.webp"
       },
       {
         "key": "b",
@@ -388,7 +388,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "heart-jar",
         "description": "精修：装满甜话和小情书的玻璃罐",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-12-stat-sweet-a.png"
+        "src": "assets/scene-art/premium/page-12-stat-sweet-a.webp"
       },
       {
         "key": "b",
@@ -425,7 +425,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "warm-bowl",
         "description": "精修：热饭、筷子和最日常的关心",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-13-stat-eat-a.png"
+        "src": "assets/scene-art/premium/page-13-stat-eat-a.webp"
       },
       {
         "key": "b",
@@ -462,7 +462,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "desk-lamp",
         "description": "精修：桌灯、电脑和等你下班的路",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-14-stat-overtime-a.png"
+        "src": "assets/scene-art/premium/page-14-stat-overtime-a.webp"
       },
       {
         "key": "b",
@@ -499,7 +499,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "return-map",
         "description": "精修：小火车沿着发光路线回家",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-15-stat-far-a.png"
+        "src": "assets/scene-art/premium/page-15-stat-far-a.webp"
       },
       {
         "key": "b",
@@ -536,7 +536,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "paper-pen",
         "description": "精修：论文纸、钢笔和一盏小台灯",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-16-stat-academia-a.png"
+        "src": "assets/scene-art/premium/page-16-stat-academia-a.webp"
       },
       {
         "key": "b",
@@ -573,7 +573,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "offer-envelope",
         "description": "精修：offer 信封、面试椅和通向好消息的门",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-17-stat-job-a.png"
+        "src": "assets/scene-art/premium/page-17-stat-job-a.webp"
       },
       {
         "key": "b",
@@ -610,7 +610,7 @@ window.SCENE_ART_OPTIONS = [
         "motif": "paper-roll",
         "description": "精修：害羞纸巾和私密玩笑小泡泡",
         "anchor": "hero",
-        "src": "assets/scene-art/premium/page-18-stat-bianbian-a.png"
+        "src": "assets/scene-art/premium/page-18-stat-bianbian-a.webp"
       },
       {
         "key": "b",
