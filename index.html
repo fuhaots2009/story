@@ -7380,13 +7380,23 @@ const PLACES = [
 
   function preloadSelectedStatArt() {
     var registry = window.SCENE_ART_OPTIONS || [];
-    registry.forEach(function (item) {
+    var queue = registry.slice();
+    function loadNext() {
+      var item = queue.shift();
+      if (!item) return;
       var picked = getSelectedStatArt(item.id);
-      if (!picked || !picked.opt || !picked.opt.src) return;
-      var im = new Image();
-      im.decoding = "async";
-      im.src = picked.opt.src;
-    });
+      if (picked && picked.opt && picked.opt.src) {
+        var im = new Image();
+        im.decoding = "async";
+        im.onload = im.onerror = function () {
+          window.setTimeout(loadNext, 120);
+        };
+        im.src = picked.opt.src;
+      } else {
+        window.setTimeout(loadNext, 0);
+      }
+    }
+    window.setTimeout(loadNext, 1800);
   }
 
   function applyStatArt(sec, stat) {
@@ -7414,9 +7424,9 @@ const PLACES = [
     img.src = opt.src;
     img.alt = "";
     img.decoding = "async";
-    img.loading = isHero ? "eager" : "lazy";
+    img.loading = "lazy";
     if (isHero) {
-      img.setAttribute("fetchpriority", "high");
+      img.setAttribute("fetchpriority", "low");
       if (img.complete) img.classList.add("is-loaded");
       img.addEventListener("load", function () {
         img.classList.add("is-loaded");
@@ -7437,7 +7447,6 @@ const PLACES = [
     var loveTreeCelebrated = false;
     // 静态场景（地图，places.inc.html 提供）先收集，之后挪到序列末尾
     var staticScenes = Array.prototype.slice.call(container.querySelectorAll(".scene"));
-    preloadSelectedStatArt();
 
     // —— 开场信封 ——
     var intro = document.createElement("section");
@@ -7447,7 +7456,17 @@ const PLACES = [
     qixiBg.src = "assets/img/qixi-bridge-wide.png?v=20260819b";
     qixiBg.alt = "";
     qixiBg.decoding = "async";
+    qixiBg.loading = "eager";
+    qixiBg.setAttribute("fetchpriority", "high");
     intro.appendChild(qixiBg);
+    var statArtPreloadStarted = false;
+    function startStatArtPreload() {
+      if (statArtPreloadStarted) return;
+      statArtPreloadStarted = true;
+      preloadSelectedStatArt();
+    }
+    qixiBg.addEventListener("load", startStatArtPreload, { once: true });
+    window.setTimeout(startStatArtPreload, 3500);
     var envelopeStage = document.createElement("div");
     envelopeStage.className = "envelope-stage";
     var envelope = document.createElement("div");
