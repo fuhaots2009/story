@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>给你</title>
+<link rel="preload" as="image" href="assets/img/qixi-bridge-wide.png?v=20260819b">
+<link rel="preload" as="image" href="assets/img/vintage-envelope-surface.png?v=20260819b">
+<link rel="preload" as="image" href="assets/img/vintage-letter-paper.png?v=20260819e">
+<link rel="preload" as="image" href="assets/img/bg.jpg">
 <style>
 /* ============ 视觉规范 ============
    基础：设计文稿 2.9（系统字体/行高 1.9/统计每行一条……）
@@ -84,6 +88,7 @@ body{
 }
 .scene-intro.letter-ready{justify-content:center}
 .scene-intro .scene-page{bottom:24px}
+.scene-intro:not(.assets-ready) .scene-page{display:none}
 .scene-intro::before{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(ellipse at 50% 42%,rgba(247,215,148,.16),rgba(247,215,148,.06) 28%,transparent 56%);
@@ -108,6 +113,9 @@ body{
   opacity:0;
   transform:translateY(28px);
   animation:envelopeEnter .8s cubic-bezier(.2,.82,.2,1) forwards,envelopeFloat 4.8s ease-in-out .9s infinite;
+}
+.scene-intro:not(.assets-ready) .envelope-stage{
+  display:none;
 }
 .envelope-stage[hidden]{display:none}
 .envelope{
@@ -285,6 +293,13 @@ body{
   box-shadow:0 16px 30px rgba(94,42,38,.30),0 0 0 1px rgba(255,255,255,.48) inset;
 }
 .envelope-inscription:active{transform:translate(-50%,-50%) scale(.98)}
+.envelope-inscription:disabled{
+  cursor:wait;
+  opacity:.70;
+  filter:saturate(.82) brightness(.96);
+  box-shadow:0 10px 22px rgba(94,42,38,.18),0 0 0 1px rgba(255,255,255,.34) inset;
+}
+.envelope-inscription:disabled:hover{transform:translate(-50%,-50%)}
 .envelope-inscription:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:6px;
@@ -360,6 +375,50 @@ body{
   background:linear-gradient(180deg,rgba(255,248,225,.88),rgba(231,190,135,.72));
   color:#6c372c;
   box-shadow:0 8px 18px rgba(96,47,35,.16),0 0 0 1px rgba(255,255,255,.36) inset;
+}
+.intro-loader{
+  position:absolute;
+  left:50%;
+  top:50%;
+  z-index:2;
+  width:min(380px,64vw);
+  margin:0;
+  color:rgba(255,248,225,.88);
+  text-align:center;
+  text-shadow:0 2px 12px rgba(35,19,36,.35);
+  opacity:1;
+  transform:translate(-50%,-50%);
+  transition:opacity .45s ease,transform .45s ease;
+}
+.intro-loader-track{
+  width:100%;
+  height:8px;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,248,225,.26);
+  box-shadow:0 1px 0 rgba(255,255,255,.30),0 8px 22px rgba(28,18,43,.22),0 0 0 1px rgba(255,248,225,.16) inset;
+}
+.intro-loader-fill{
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+  transform:scaleX(var(--intro-load,0));
+  transform-origin:left center;
+  background:linear-gradient(90deg,#f6aeb9,#f7d794,#8ddfd0);
+  box-shadow:0 0 18px rgba(247,215,148,.50);
+  transition:transform .24s ease;
+}
+.intro-loader-text{
+  margin-top:10px;
+  font-size:13px;
+  letter-spacing:.14em;
+  text-indent:.14em;
+}
+.scene-intro.assets-ready .intro-loader{
+  opacity:0;
+  transform:translate(-50%,-58%);
+  pointer-events:none;
 }
 .scene-intro.letter-ready .intro-letter-wrap{display:flex}
 .scene-intro.letter-ready .scene-line{animation:sceneIn .7s ease both}
@@ -7378,25 +7437,88 @@ const PLACES = [
     return { item: item, opt: opt || item.options[0] };
   }
 
-  function preloadSelectedStatArt() {
+  function collectSelectedStatArtSources() {
     var registry = window.SCENE_ART_OPTIONS || [];
-    var queue = registry.slice();
-    function loadNext() {
-      var item = queue.shift();
-      if (!item) return;
+    var sources = [];
+    registry.forEach(function (item) {
       var picked = getSelectedStatArt(item.id);
-      if (picked && picked.opt && picked.opt.src) {
-        var im = new Image();
-        im.decoding = "async";
-        im.onload = im.onerror = function () {
-          window.setTimeout(loadNext, 120);
-        };
-        im.src = picked.opt.src;
-      } else {
-        window.setTimeout(loadNext, 0);
+      if (picked && picked.opt && picked.opt.src) sources.push(picked.opt.src);
+    });
+    return sources;
+  }
+
+  function uniqueAssetSources(sources) {
+    var seen = {};
+    var out = [];
+    (sources || []).forEach(function (src) {
+      if (!src) return;
+      var value = String(src).trim();
+      if (!value || /^data:/.test(value)) return;
+      var key;
+      try { key = new URL(value, location.href).href; }
+      catch (e) { key = value; }
+      if (seen[key]) return;
+      seen[key] = true;
+      out.push(value);
+    });
+    return out;
+  }
+
+  function preloadImageAssets(sources, onProgress, onDone) {
+    var queue = uniqueAssetSources(sources);
+    var total = queue.length;
+    var done = 0;
+    var active = 0;
+    var limit = 5;
+    var finished = false;
+    function report() {
+      if (onProgress) onProgress(done, total);
+    }
+    function completeOne() {
+      done++;
+      active--;
+      report();
+      pump();
+    }
+    function pump() {
+      if (finished) return;
+      while (active < limit && queue.length) {
+        active++;
+        var src = queue.shift();
+        var settled = false;
+        var timer = window.setTimeout(function () {
+          finish();
+        }, 18000);
+        function finish() {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          completeOne();
+        }
+        if (window.fetch) {
+          fetch(src, { cache: "force-cache" })
+            .then(function (res) {
+              if (!res.ok) throw new Error("asset " + res.status);
+              return res.blob();
+            })
+            .then(finish)
+            .catch(finish);
+        } else {
+          var im = new Image();
+          im.decoding = "async";
+          im.onload = finish;
+          im.onerror = finish;
+          im.src = src;
+          if (im.complete && im.naturalWidth) finish();
+        }
+      }
+      if (!queue.length && active === 0) {
+        finished = true;
+        if (onDone) onDone();
       }
     }
-    window.setTimeout(loadNext, 1800);
+    report();
+    pump();
   }
 
   function applyStatArt(sec, stat) {
@@ -7459,14 +7581,21 @@ const PLACES = [
     qixiBg.loading = "eager";
     qixiBg.setAttribute("fetchpriority", "high");
     intro.appendChild(qixiBg);
-    var statArtPreloadStarted = false;
-    function startStatArtPreload() {
-      if (statArtPreloadStarted) return;
-      statArtPreloadStarted = true;
-      preloadSelectedStatArt();
-    }
-    qixiBg.addEventListener("load", startStatArtPreload, { once: true });
-    window.setTimeout(startStatArtPreload, 3500);
+    var introLoader = document.createElement("div");
+    introLoader.className = "intro-loader";
+    introLoader.setAttribute("role", "status");
+    introLoader.setAttribute("aria-live", "polite");
+    var loaderTrack = document.createElement("div");
+    loaderTrack.className = "intro-loader-track";
+    var loaderFill = document.createElement("span");
+    loaderFill.className = "intro-loader-fill";
+    loaderTrack.appendChild(loaderFill);
+    var loaderText = document.createElement("div");
+    loaderText.className = "intro-loader-text";
+    loaderText.textContent = "正在加载 0%";
+    introLoader.appendChild(loaderTrack);
+    introLoader.appendChild(loaderText);
+    intro.appendChild(introLoader);
     var envelopeStage = document.createElement("div");
     envelopeStage.className = "envelope-stage";
     var envelope = document.createElement("div");
@@ -7486,6 +7615,7 @@ const PLACES = [
     openBtn.type = "button";
     openBtn.className = "envelope-inscription";
     openBtn.setAttribute("aria-label", "木木亲启，开启信封");
+    openBtn.disabled = true;
     var waxMark = document.createElement("span");
     waxMark.className = "wax-mark";
     var inscriptionText = document.createElement("span");
@@ -7531,7 +7661,7 @@ const PLACES = [
     introHint.hidden = true;
     intro.appendChild(introHint);
     container.appendChild(intro);
-    var introScene = { el: intro, hint: introHint, intro: true, opened: false, opening: false };
+    var introScene = { el: intro, hint: introHint, intro: true, opened: false, opening: false, assetsReady: false };
     openBtn.addEventListener("click", function (e) {
       e.stopPropagation();
       startIntroOpen(introScene);
@@ -7672,11 +7802,6 @@ const PLACES = [
       "assets/scene-art/premium/stages/stage-09-xinhun.png?v=20260819c",
       "assets/scene-art/premium/stages/stage-10-womensan.png?v=20260819c"
     ];
-    STAGE_BACKGROUNDS.forEach(function (src) {
-      var im = new Image();
-      im.decoding = "async";
-      im.src = src;
-    });
     var STAGE_DESC = [
       "认识的第一年，我们还在互相试探。消息一条一条，越聊越多，谁也没提停。",
       "见过面之后，一切都变了。原来屏幕里的人，笑起来是这个样子。",
@@ -8030,6 +8155,44 @@ const PLACES = [
     container.classList.add("flow-mode");
     scenes.forEach(function (s) { addPage(s.el); });
 
+    (function startIntroAssetGate() {
+      var sources = [
+        "assets/img/qixi-round-moon.svg",
+        "assets/img/chat-cartoon-bg.png?v=20260819a",
+        "assets/img/love-tree-fireworks.png",
+        "assets/img/avatar-me.jpg?v=20260819b",
+        "assets/img/avatar-you.jpg?v=20260819b",
+        "assets/scene-art/premium/page-19-love-tree.png",
+        "assets/scene-art/premium/timeline-summary-bg.png?v=20260819b",
+        "assets/scene-art/premium/ending-story-continues.png?v=20260819b"
+      ];
+      sources = sources.concat(collectSelectedStatArtSources(), STAGE_BACKGROUNDS || []);
+      function isGateExcluded(src) {
+        return /assets\/img\/(qixi-bridge-wide|vintage-envelope-surface|vintage-letter-paper|bg)\./.test(src || "");
+      }
+      container.querySelectorAll("img").forEach(function (img) {
+        var src = img.currentSrc || img.src;
+        if (src && !isGateExcluded(src)) sources.push(src);
+      });
+      function updateIntroProgress(done, total) {
+        var pct = total ? Math.round(done / total * 100) : 100;
+        intro.style.setProperty("--intro-load", String(Math.min(1, pct / 100)));
+        loaderText.textContent = pct >= 100 ? "加载完成 100%" : "正在加载 " + pct + "%";
+        introLoader.setAttribute("aria-label", loaderText.textContent);
+      }
+      var gateDone = false;
+      function finishIntroGate() {
+        if (gateDone) return;
+        gateDone = true;
+        updateIntroProgress(1, 1);
+        introScene.assetsReady = true;
+        openBtn.disabled = false;
+        intro.classList.add("assets-ready");
+      }
+      preloadImageAssets(sources, updateIntroProgress, finishIntroGate);
+      window.setTimeout(finishIntroGate, 22000);
+    })();
+
     // 流程期间锁定：页脚不显示，走完全部场景才解锁
     var footerEl = document.querySelector("footer");
     if (footerEl) footerEl.classList.add("flow-locked");
@@ -8065,6 +8228,7 @@ const PLACES = [
 
     function startIntroOpen(sc) {
       if (!sc || sc.opening || sc.opened) return;
+      if (!sc.assetsReady) return;
       sc.opening = true;
       intro.classList.add("envelope-opening");
       openBtn.disabled = true;
