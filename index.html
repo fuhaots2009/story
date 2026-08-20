@@ -738,7 +738,7 @@ body{
   width:100vw;max-width:none;margin-left:calc(50% - 50vw);
   justify-content:center;text-align:left;overflow:hidden;
   padding:74px 24px 102px;
-  background:url("assets/scene-art/premium/page-19-love-tree.webp") center/cover no-repeat;
+  background:url("assets/scene-art/premium/page-19-love-tree-fixed.webp?v=20260820a") center/cover no-repeat;
 }
 .scene-overview::after{
   content:none;
@@ -764,6 +764,7 @@ body{
   border:0;background:transparent;padding:0;
   display:block;
   cursor:default;color:rgba(75,64,96,.72);
+  z-index:1;
 }
 .ov-fruit{
   position:relative;
@@ -772,11 +773,16 @@ body{
   display:flex;align-items:center;justify-content:center;
   padding:8px 10px 0;box-sizing:border-box;
   font-family:"Kaiti SC","STKaiti","KaiTi","FangSong","STFangsong","Noto Serif SC",serif;
-  font-size:20px;font-weight:900;letter-spacing:.055em;
-  color:rgba(82,31,52,.72);
-  text-shadow:0 1px 0 rgba(255,245,226,.62),0 2px 4px rgba(82,31,52,.20);
+  font-size:0;font-weight:900;letter-spacing:0;
+  color:transparent;text-shadow:none;
   background:transparent;border:0;box-shadow:none;filter:none;
   transition:transform .45s cubic-bezier(.2,.8,.2,1),color .35s ease,text-shadow .35s ease;
+}
+.ov-item::after{
+  content:"";position:absolute;inset:-12px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,236,157,.78) 0,rgba(255,218,113,.34) 34%,transparent 72%);
+  opacity:0;filter:blur(8px);pointer-events:none;z-index:-1;
+  transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);
 }
 .ov-fruit::before{
   content:"";position:absolute;inset:6px 12px 2px;border-radius:50%;
@@ -789,9 +795,9 @@ body{
 .ov-item.available{cursor:pointer}
 .ov-item.lit .ov-fruit{
   transform:scale(1.06);
-  color:#fff8df;
-  text-shadow:0 1px 0 rgba(118,32,53,.55),0 0 16px rgba(255,227,139,.88),0 0 28px rgba(255,190,112,.48);
+  filter:drop-shadow(0 0 10px rgba(255,227,139,.78)) drop-shadow(0 0 22px rgba(255,190,112,.42));
 }
+.ov-item.lit::after{opacity:1;transform:scale(1.08)}
 .ov-item.lit .ov-fruit::before{
   opacity:1;
   filter:blur(1px);
@@ -866,7 +872,7 @@ body{
   .ov-unlock{left:28px;top:204px}
   .ov-fireworks--left{left:38%;top:15%;width:310px}
   .ov-fireworks--right{left:78%;top:13%;width:250px}
-  .ov-fruit{width:54px;height:50px;font-size:14px}
+  .ov-fruit{width:54px;height:50px}
 }
 .tl-stage-list{max-width:760px;margin:0 auto}
 .scene-stage .tl-stage-list{
@@ -7956,6 +7962,19 @@ const PLACES = [
       ];
       var treeBox = document.createElement("div");
       treeBox.className = "ov-tree";
+      function positionTreeHotspots() {
+        var box = treeBox.getBoundingClientRect();
+        if (!box.width || !box.height) return;
+        var scale = Math.max(box.width / 1586, box.height / 992);
+        var offsetX = (box.width - 1586 * scale) / 2;
+        var offsetY = (box.height - 992 * scale) / 2;
+        var hotspots = treeBox.querySelectorAll(".ov-item");
+        for (var h = 0; h < hotspots.length; h++) {
+          var ndh = TREE_NODES[h];
+          hotspots[h].style.left = (offsetX + (ndh.x / 100 * 1586) * scale) + "px";
+          hotspots[h].style.top = (offsetY + (ndh.y / 100 * 992) * scale) + "px";
+        }
+      }
       TREE_NODES.forEach(function (nd) {
         (function (seg) {
           var item = document.createElement("button");
@@ -7986,6 +8005,8 @@ const PLACES = [
         })(nd.seg);
       });
       sec.appendChild(treeBox);
+      window.addEventListener("resize", positionTreeHotspots);
+      requestAnimationFrame(positionTreeHotspots);
       var progWrap = document.createElement("div");
       progWrap.className = "ov-progress-wrap";
       var prog = document.createElement("div");
@@ -8157,7 +8178,7 @@ const PLACES = [
         "assets/img/love-tree-fireworks.webp",
         "assets/img/avatar-me.jpg?v=20260819b",
         "assets/img/avatar-you.jpg?v=20260819b",
-        "assets/scene-art/premium/page-19-love-tree.webp",
+        "assets/scene-art/premium/page-19-love-tree-fixed.webp?v=20260820a",
         "assets/scene-art/premium/timeline-summary-bg.webp?v=20260819b",
         "assets/scene-art/premium/ending-story-continues.webp?v=20260819b"
       ];
